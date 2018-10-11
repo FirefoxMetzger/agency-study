@@ -7,7 +7,7 @@
     </div>
     <LikertScale>
       <Question v-for="(question, name, index) in form" :key="index" :class="`index-mod-${index % 2}`"
-        v-on:valueChanged="question.response = $event">{{question.text}}</Question>
+        v-model="question.response">{{question.text}}</Question>
     </LikertScale>
     <RankingScale>
       <RankingQuestion v-for="(question,name,index) in form2" :key="index" 

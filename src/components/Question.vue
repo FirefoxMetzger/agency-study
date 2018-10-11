@@ -12,6 +12,9 @@
 <script>
 export default {
   props: {
+    value: {
+      type: Number
+    },
     points: {
       type: Number,
       default: 5
@@ -33,7 +36,7 @@ export default {
   },
   watch: {
     selected: function () {
-      this.$emit('valueChanged', this.selected)
+      this.$emit('input', this.selected)
     }
   }
 }
