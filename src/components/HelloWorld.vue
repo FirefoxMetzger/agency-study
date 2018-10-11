@@ -9,7 +9,12 @@
       <Question v-for="(question, name, index) in form" :key="index" :class="`index-mod-${index % 2}`"
         v-on:valueChanged="question.response = $event">{{question.text}}</Question>
     </LikertScale>
-    <RankingScale></RankingScale>
+    <RankingScale>
+      <RankingQuestion v-for="(question,name,index) in form2" :key="index" 
+        :class="`index-mod-${index % 2}`" v-model="question.response">
+        {{question.text}}  
+      </RankingQuestion>
+    </RankingScale>
   </div>
 </template>
 
@@ -18,13 +23,21 @@ import LikertScale from './LikertScale'
 import Question from './Question'
 import Embodiment from './Embodiment'
 import RankingScale from './RankingScale'
+import RankingQuestion from './RankingQuestion'
+
+let options = [
+  'nao',
+  'nao2',
+  'nao3'
+]
 
 export default {
   components: {
     LikertScale,
     Question,
     Embodiment,
-    RankingScale
+    RankingScale,
+    RankingQuestion
   },
   data () {
     return {
@@ -37,6 +50,12 @@ export default {
       },
       descriptions: {
         mentalized: 'This is a small description.'
+      },
+      form2: {
+        'q1': {
+          text: 'Please order the NAOs with respect to epicness',
+          response: options.slice()
+        }
       },
       form: {
         'q1': {
