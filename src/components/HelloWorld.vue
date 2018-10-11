@@ -55,6 +55,14 @@ export default {
         'q1': {
           text: 'Please order the NAOs with respect to epicness',
           response: options.slice()
+        },
+        'q2': {
+          text: 'Feelings?',
+          response: options.slice()
+        },
+        'q3': {
+          text: 'Badass?',
+          response: options.slice()
         }
       },
       form: {
