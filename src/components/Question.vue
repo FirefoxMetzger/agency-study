@@ -33,7 +33,7 @@ export default {
   },
   watch: {
     selected: function () {
-      this.$emit("valueChanged", this.selected)
+      this.$emit('valueChanged', this.selected)
     }
   }
 }
