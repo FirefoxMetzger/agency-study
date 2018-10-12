@@ -1,9 +1,15 @@
 <template>
   <div>
     <div class="md-layout md-alignment-center-space-around robot-display">
-      <Embodiment class="md-layout-item md-size-30" :title="robots.nao.name" :src="robots.nao.image">{{descriptions.mentalized}}</Embodiment>
-      <Embodiment class="md-layout-item md-size-30" :title="robots.nao.name" :src="robots.nao.image">{{descriptions.mentalized}}</Embodiment>
-      <Embodiment class="md-layout-item md-size-30" :title="robots.nao.name" :src="robots.nao.image">{{descriptions.mentalized}}</Embodiment>
+      <Embodiment class="md-layout-item md-size-30" :title="robots.nao.name" :src="robots.nao.image">
+        {{descriptions.mentalized}}
+      </Embodiment>
+      <Embodiment class="md-layout-item md-size-30" :title="robots.nao.name" :src="robots.nao.image">
+        {{descriptions.mentalized}}
+      </Embodiment>
+      <Embodiment class="md-layout-item md-size-30" :title="robots.nao.name" :src="robots.nao.image">
+        {{descriptions.mentalized}}
+      </Embodiment>
     </div>
     <LikertScale>
       <Question v-for="(question, name, index) in form" :key="index" :class="`index-mod-${index % 2}`"
