@@ -2,20 +2,11 @@
   <div class="md-layout md-alignment-center-center">
     <div class="md-layout-item md-layout md-alignment-center-space-around md-size-100 robot-display">
       <Embodiment class="md-layout-item md-size-30" :title="robots.nao.name" :src="robots.nao.image">
-        {{descriptions.mentalized}}
       </Embodiment>
       <Embodiment class="md-layout-item md-size-30" :title="robots.nao.name" :src="robots.nao.image">
-        {{descriptions.mentalized}}
       </Embodiment>
       <Embodiment class="md-layout-item md-size-30" :title="robots.nao.name" :src="robots.nao.image">
-        {{descriptions.mentalized}}
       </Embodiment>
-    </div>
-    <div class="md-layout-item md-size-100">
-      <LikertScale>
-      <Question v-for="(question, name, index) in form" :key="index" :class="`index-mod-${index % 2}`"
-        v-model="question.response">{{question.text}}</Question>
-    </LikertScale>
     </div>
     <div class="md-layout-item md-size-95">
       <div>
@@ -145,26 +136,12 @@ export default {
           text: 'Which character is more capable of <b>thinking</b>?',
           response: options.slice()
         }
-      },
-      form: {
-        'q1': {
-          text: 'This is a test question that is so long that it will cause wierd formatting',
-          response: null
-        },
-        'q2': {
-          text: 'This is a test question that is so long that it will cause wierd formatting',
-          response: null
-        },
-        'q3': {
-          text: 'This is a test question that is so long that it will cause wierd formatting',
-          response: null
-        }
       }
     }
   },
   methods: {
     submit: function () {
-      this.$router.push({path:"description"})
+      this.$router.push({path: 'description'})
     }
   }
 }

@@ -11,12 +11,6 @@
         {{descriptions.mentalized}}
       </Embodiment>
     </div>
-    <div class="md-layout-item md-size-100">
-      <LikertScale>
-      <Question v-for="(question, name, index) in form" :key="index" :class="`index-mod-${index % 2}`"
-        v-model="question.response">{{question.text}}</Question>
-    </LikertScale>
-    </div>
     <div class="md-layout-item md-size-95">
       <div>
         <p align="left">
@@ -33,7 +27,7 @@
     </RankingScale>
     </div>
     <div class="md-layout-item">
-      <md-button class="md-primary md-raised">Submit</md-button>
+      <md-button class="md-primary md-raised" v-on:click="submit">Submit</md-button>
     </div>
     </div>
   </div>
@@ -160,6 +154,11 @@ export default {
           response: null
         }
       }
+    }
+  },
+  methods: {
+    submit: function () {
+      this.$router.push({path: 'thanks'})
     }
   }
 }

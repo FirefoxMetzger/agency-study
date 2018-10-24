@@ -10,26 +10,7 @@
 </template>
 
 <script>
-import LikertScale from './LikertScale'
-import Question from './Question'
-import Embodiment from './Embodiment'
-import RankingScale from './RankingScale'
-import RankingQuestion from './RankingQuestion'
-
-let options = [
-  'nao',
-  'nao2',
-  'nao3'
-]
-
 export default {
-  components: {
-    LikertScale,
-    Question,
-    Embodiment,
-    RankingScale,
-    RankingQuestion
-  },
   data () {
     return {
     }
@@ -38,15 +19,5 @@ export default {
 </script>
 
 <style scoped>
-.robot-display{
-  margin-bottom: 40px;
-}
 
-.index-mod-0{
-
-}
-
-.index-mod-1{
-  background-color: lightgray;
-}
 </style>
